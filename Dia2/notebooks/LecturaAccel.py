@@ -1,6 +1,7 @@
 import android
 import csv
 droide=android.Android()
+archivo = droide.dialogGetInput("Nombre de archivo para resultados:")
 # 100ms entre lecturas
 dt = 100
 # duracion de la muestras
@@ -16,6 +17,6 @@ while tiempo <= fin:
     tiempo += dt
     
 droide.stopSensing();
-with open('resultados.csv', 'w') as fp:
+with open(archivo.result+".csv", 'w') as fp:
     a = csv.writer(fp,delimiter=',')
     a.writerows(lecturas)
